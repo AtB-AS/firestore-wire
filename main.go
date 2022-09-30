@@ -25,13 +25,13 @@ func main() {
 	fmt.Fprintln(os.Stdout, mustMarshal(mustFromJSON(m)))
 }
 
-func mustMarshal(d *pb.Document) []byte {
+func mustMarshal(d *pb.Document) string {
 	b, err := protojson.Marshal(d)
 	if err != nil {
 		panic(err)
 	}
 
-	return b
+	return string(b)
 }
 
 func mustFromJSON(m map[string]interface{}) *pb.Document {

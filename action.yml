@@ -1,0 +1,14 @@
+name: firestore-wire
+description: Convert JSON documents on stdin to JSON firestore wire format on stdout
+inputs:
+  document:
+    description: The JSON document
+    required: true
+outputs:
+  result:
+    description: The JSON document in JSON firestore wire format
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+  - ${{ inputs.document }}
